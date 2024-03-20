@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Captura de Datos{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <h1>Captura de Datos del Usuario</h1>
+    <form method="POST" action="{{ url_for('capture_data') }}">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Introduce tu nombre" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Continuar</button>
+    </form>
+</div>
+{% endblock %}

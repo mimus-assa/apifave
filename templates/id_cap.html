@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Captura de Identidad{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>APIFaVe: Captura de identidad</h1>
+    <p>Instrucciones para el Usuario: Centre su rostro en la cámara y espere a que comience la secuencia de captura. Video streaming a continuación.</p>
+    <img id="bg" src="{{ url_for('video_feed', name=user_name) }}" onerror="reconnectStream()">
+</div>
+<script>
+    var userName = "{{ user_name }}"; // Pasar el nombre del usuario al archivo JavaScript
+    
+    function reconnectStream() {
+        console.log("Intentando reconectar el stream de video...");
+        // Modifica la URL de alguna manera para forzar al navegador a reconectar.
+        // Esto puede ser tan simple como añadir un parámetro de query aleatorio.
+        var imgElement = document.getElementById('bg');
+        imgElement.src = `{{ url_for('video_feed', name=user_name) }}&dummy=${Math.random()}`;
+    }
+</script>
+{% endblock %}

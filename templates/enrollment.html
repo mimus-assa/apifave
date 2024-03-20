@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}enrollment{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+  <h1>introduzca un folio y un nombre, al dar click en el boton de capturar se abrira una ventana para capturar rasgos faciales</h1>
+ <h1>(esto es una demo)</h1>
+
+  <style> 
+  textarea {
+  width: 100%;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  }
+</style>
+<form method="POST"> 
+  <textarea name="textbox">Nombre</textarea>
+  <textarea name="textbox2">Folio</textarea>
+  <button type="submit" name="submit">Submit</button>
+</form>
+</div>
+{% endblock %}
